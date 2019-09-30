@@ -1,0 +1,88 @@
+<html lang="en">
+  <head>
+    <title>Survey</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Survey</h1>
+      Customize the types of correspondence you will receive by taking a short
+      survey!
+    </div>
+    <form action="javascript:;" onsubmit="submitForm(this)">
+      <label for="fn">Name</label>
+      <br />
+
+      <input
+        type="text"
+        id="fn"
+        name="firstname"
+        placeholder="What name would you like to use?"
+      />
+      <br />
+      <label for="fg">Favorite Game</label>
+      <br />
+
+      <input
+        type="text"
+        id="fg"
+        name="favoritegame"
+        placeholder="What's your all time favorite game?"
+      />
+      <br />
+      <label for="phone">Phone Type </label>
+      <br />
+      <label>
+        <input type="radio" name="phone" value="Android" />
+        Android
+      </label>
+      <label>
+        <input type="radio" name="phone" value="Apple" />
+        Apple
+      </label>
+      <label>
+        <input type="radio" name="phone" value="other" />
+        Other
+      </label>
+      <br />
+      <label>Type of Emails</label>
+      <br />
+      <input type="checkbox" name="emails" value="news" /> News
+      <input type="checkbox" name="emails" value="marketing" /> Marketing
+      <input type="checkbox" name="emails" value="hints" /> Hints and Tips
+      <input type="checkbox" name="emails" value="beta" /> Beta Tests
+      <br />
+      <label>Emails per Month</label>
+      <br />
+
+      <input
+        name="emailsPerMonth"
+        type="number"
+        max="10"
+        min="0"
+        placeholder="How many emails would you like to receive each month?"
+      />
+      <br />
+
+      <label>Discount Code</label>
+      <br />
+      <input
+        name="discountCode"
+        type="password"
+        placeholder="What is your personal discount code?"
+      />
+      <label>Comments</label>
+      <br />
+      <textarea
+        name="comments"
+        placeholder="Anything else you would like to share?"
+      ></textarea>
+      <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
