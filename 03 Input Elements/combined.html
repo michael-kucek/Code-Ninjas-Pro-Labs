@@ -1,0 +1,249 @@
+<html lang="en">
+  <head>
+    <title>Survey</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function submitForm(form) {
+        console.log("submitted");
+        const inputs = form.querySelectorAll("input");
+        const textareas = form.querySelectorAll("textarea");
+        const data = [...inputs, ...textareas];
+        const results = { timeSubmitted: new Date().toUTCString() };
+        console.log(data);
+        data.forEach(d => {
+          if (d.type === "submit") return;
+          if (d.type === "radio" && !d.checked) return;
+          if (d.type === "checkbox" && d.checked) {
+            if (!results[d.name]) results[d.name] = [];
+            results[d.name].push(d.value);
+            return;
+          }
+          if (d.type === "checkbox" && !d.checked) return;
+          results[d.name] = d.value;
+        });
+        const body = document.querySelector("body");
+        var res = body.querySelector("#results");
+        if (!res) {
+          const resD = document.createElement("div");
+          resD.id = "results";
+          res = resD;
+          body.appendChild(resD);
+        }
+        const resText = JSON.stringify(results, null, 2);
+        res.innerHTML = `<h1>Results</h1><pre style="overflow:auto">${resText}</pre>`;
+      }
+    </script>
+    <style>
+      h1 {
+        margin-top: 0px;
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 1.2em;
+        height: 100%;
+        margin: 0;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 1em 2em;
+        background-image: linear-gradient(#7986cb, #e3f2fd, #80cbc4);
+      }
+      div,
+      form {
+        background-color: #e3f2fd;
+        padding: 2em;
+        border-radius: 16px;
+        background-color: #fff;
+        margin: 0 0 10px 0;
+        box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+        border-radius: 8px;
+      }
+      input[type="submit"] {
+        background-color: #80cbc4;
+        padding: 0.75em 1.2em;
+        border: none;
+        border-radius: 4px;
+        width: 120px;
+        height: 36px;
+        transition: border 0.2s ease-in-out;
+        border-bottom: 1px solid #80cbc4;
+      }
+      input[type="submit"]:hover {
+        border-bottom: 3px solid #7986cb;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="password"],
+      input[type="date"],
+      textarea {
+        background-color: #fff;
+        border-top: 1px solid #fff;
+        border-left: 1px solid #fff;
+        border-right: 1px solid #fff;
+        border-bottom: 1px solid #80cbc4;
+        width: 100%;
+        padding: 0.75em;
+        transition: border-color 0.3s ease-in-out,
+          border-radius 0.4s ease-in-out;
+      }
+      input[type="text"]:focus,
+      input[type="number"]:focus,
+      input[type="password"]:focus,
+      input[type="date"]:focus,
+      textarea:focus {
+        border: 1px solid #7986cb;
+        border-radius: 6px;
+      }
+      input[type="radio"] {
+        margin-left: 1.5em;
+        margin-top: 1.5em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      input[type="radio"]:after {
+        width: 1em;
+        height: 1em;
+        border-radius: 1em;
+        top: 0.25em;
+        position: relative;
+        background-color: #e3f2fd;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #b0bec5;
+      }
+      input[type="radio"]:checked:after {
+        width: 1em;
+        height: 1em;
+        top: 0.25em;
+        position: relative;
+        background-color: #80cbc4;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #b0bec5;
+      }
+      input[type="checkbox"] {
+        margin-left: 1.5em;
+        margin-top: 1.5em;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      input[type="checkbox"]:after {
+        width: 1em;
+        height: 1em;
+        top: 0.25em;
+        position: relative;
+        background-color: #e3f2fd;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #b0bec5;
+      }
+      input[type="checkbox"]:checked:after {
+        width: 1em;
+        height: 1em;
+        top: 0.25em;
+        position: relative;
+        background-color: #80cbc4;
+        content: "";
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid #b0bec5;
+      }
+      input,
+      textarea {
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 0.8rem;
+        margin-bottom: 3em;
+      }
+    </style>
+  </head>
+  <body id="lab">
+    <div>
+      <h1>Survey</h1>
+      Customize the types of correspondence you will receive by taking a short
+      survey!
+    </div>
+    <form action="#" onsubmit="submitForm(this)">
+      <label for="fn">Name</label>
+      <br />
+      <input
+        type="text"
+        id="fn"
+        name="firstname"
+        placeholder="What name would you like to use?"
+      />
+      <br />
+      <label for="fg">Favorite Game</label>
+      <br />
+      <input
+        type="text"
+        id="fg"
+        name="favoritegame"
+        placeholder="What's your all time favorite game?"
+      />
+      <br />
+      <label for="fg">Birthday</label>
+      <input type="date" id="bd" name="birthday" />
+      <br />
+      <label for="phone">Phone Type </label>
+      <br />
+      <label>
+        <input type="radio" name="phone" value="Android" />
+        Android
+      </label>
+      <label>
+        <input type="radio" name="phone" value="Apple" />
+        Apple
+      </label>
+      <label>
+        <input type="radio" name="phone" value="other" />
+        Other
+      </label>
+      <br />
+      <label>Type of Emails</label>
+      <br />
+      <input type="checkbox" name="emails" value="news" /> News
+      <input type="checkbox" name="emails" value="marketing" /> Marketing
+      <input type="checkbox" name="emails" value="hints" /> Hints and Tips
+      <input type="checkbox" name="emails" value="beta" /> Beta Tests
+      <br />
+      <label>Emails per Month</label>
+      <br />
+      <input
+        name="emailsPerMonth"
+        type="number"
+        max="10"
+        min="0"
+        placeholder="How many emails would you like to receive each month?"
+      />
+      <br />
+      <label>Discount Code</label>
+      <br />
+      <input
+        name="discountCode"
+        type="password"
+        placeholder="What is your personal discount code?"
+      />
+      <label>Comments</label>
+      <br />
+      <textarea
+        name="comments"
+        placeholder="Anything else you would like to share?"
+      ></textarea>
+      <br />
+      <br />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>

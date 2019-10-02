@@ -3,10 +3,14 @@
     <title>Survey</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script src="script.js"></script>
   </head>
-  <body>
+  <body id="lab">
     <div>
       <h1>Survey</h1>
       Customize the types of correspondence you will receive by taking a short
@@ -15,7 +19,6 @@
     <form action="javascript:;" onsubmit="submitForm(this)">
       <label for="fn">Name</label>
       <br />
-
       <input
         type="text"
         id="fn"
@@ -25,13 +28,15 @@
       <br />
       <label for="fg">Favorite Game</label>
       <br />
-
       <input
         type="text"
         id="fg"
         name="favoritegame"
         placeholder="What's your all time favorite game?"
       />
+      <br />
+      <label for="fg">Birthday</label>
+      <input type="date" id="bd" name="birthday" />
       <br />
       <label for="phone">Phone Type </label>
       <br />
@@ -57,7 +62,6 @@
       <br />
       <label>Emails per Month</label>
       <br />
-
       <input
         name="emailsPerMonth"
         type="number"
@@ -66,7 +70,6 @@
         placeholder="How many emails would you like to receive each month?"
       />
       <br />
-
       <label>Discount Code</label>
       <br />
       <input

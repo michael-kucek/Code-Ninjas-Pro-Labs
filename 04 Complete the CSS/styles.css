@@ -1,0 +1,76 @@
+body {
+  font-family: "Merriweather", serif;
+  background-color: #ebebeb; /* light gray */
+  padding-top: 1.4em;
+  padding-bottom: 1em;
+}
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 2px solid darkblue;
+  background-color: white;
+  width: 100%;
+  margin: 0;
+  padding: 0.25em;
+}
+section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  border-bottom: 2px solid white;
+}
+article {
+  background-color: white;
+  margin: 1em;
+  width: 350px;
+}
+.nav-link {
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0em 0.25em;
+}
+.section-header {
+  font-family: "Turret Road", cursive;
+  margin: 0.8em;
+}
+.article-title {
+  text-transform: uppercase;
+  background-color: #aac6f3; /* light blue */
+  margin: 0;
+  padding: 0.25em 0.5em;
+}
+.article-text {
+  padding: 0.25em 1em;
+}
+.article-date {
+  margin: 8px;
+  color: gray;
+  font-size: 12px;
+  text-align: right;
+}
+.new-article {
+  box-shadow: 0 0 8px 2px #aac6f3; /* light blue */
+}
+#site-info {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 16px;
+  border-top: 2px solid darkblue;
+  background-color: white;
+  font-size: 0.8em;
+  padding: 4px;
+}
+#account {
+  float: right;
+  padding-right: 0.5em;
+}
+#nav-title {
+  font-family: "Turret Road", cursive;
+  font-weight: bold;
+  color: darkblue;
+}
