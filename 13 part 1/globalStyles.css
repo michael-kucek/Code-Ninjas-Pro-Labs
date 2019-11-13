@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css?family=Inconsolata&display=swap");
+
+html {
+  background-color: #34495e;
+  color: #ecf0f1;
+  overflow: auto;
+}
+body {
+  font-family: "Inconsolata", monospace;
+  margin: 0px;
+}
+
+button:focus {
+  border: none;
+  outline: none;
+}

@@ -1,0 +1,205 @@
+<html lang="en">
+  <head>
+    <title>🗺️️ The Traveling Ninja 🗺️️</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Gochi+Hand|Permanent+Marker|Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .columns {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .shadow {
+        box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.5);
+      }
+      .paper {
+        border-left: 4px solid rgb(255, 206, 206);
+        background: -webkit-gradient(
+            linear,
+            0 0,
+            0 100%,
+            from(#bbe7ff),
+            color-stop(4%, rgb(255, 250, 243))
+          )
+          0 4px;
+        background-size: 100% 24px;
+      }
+      body {
+        font-family: "Shadows Into Light", cursive;
+        font-size: 1.4em;
+        margin: 0;
+        background: cornflowerblue;
+      }
+      section {
+        padding: 0em 1em;
+        margin: 1em;
+      }
+      h1 {
+        font-family: "Permanent Marker", cursive;
+        border-bottom: 4px solid black;
+        border-bottom-right-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+      .polaroid {
+        position: relative;
+        width: 300;
+        background-color: white;
+        margin: 1em;
+      }
+      .polaroid p {
+        padding: 1em;
+      }
+      .polaroid img {
+        width: 100%;
+        box-sizing: border-box;
+        border-left: 8px solid white;
+        border-right: 8px solid white;
+        object-fit: cover;
+        max-height: 200px;
+      }
+      .polaroid div {
+        font-family: "Permanent Marker", cursive;
+        text-align: center;
+        width: 100%;
+      }
+      #header-image {
+        width: 100%;
+        max-height: 150px;
+        object-fit: cover;
+        position: absolute;
+        z-index: -100;
+      }
+      #site-header {
+        font-family: "Permanent Marker", cursive;
+        font-size: 1.4em;
+        color: white;
+        text-shadow: #000 0px 0px 2px;
+        padding: 0.25em;
+      }
+      #site-tagline {
+        color: white;
+        padding-left: 0.5em;
+        text-shadow: #000 0px 0px 2px;
+      }
+      #header-container {
+        height: 150px;
+      }
+      form {
+        margin: 1em;
+      }
+      input {
+        font-family: "Permanent Marker", cursive;
+        font-size: 1.4em;
+        margin: 0.5em;
+        padding: 0em 0.5em;
+        border: none;
+      }
+      input[type="submit"] {
+        background: cornflowerblue;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container">
+      <img
+        id="header-image"
+        class="shadow"
+        src="https://images.pexels.com/photos/21014/pexels-photo.jpg?cs=srgb&dl=adventure-baltic-sea-car-21014.jpg&fm=jpg"
+      />
+      <div id="site-header">The Traveling Ninja</div>
+      <div id="site-tagline">
+        Fun things to do, see, and eat!
+      </div>
+    </div>
+    <section id="to-do" class="paper shadow">
+      <h1>Things to Do</h1>
+      <p>Find your next fun activity!</p>
+      <div class="columns">
+        <article class="polaroid shadow">
+          <div>Picnic in the Park</div>
+          <img
+            src="https://images.pexels.com/photos/2852438/pexels-photo-2852438.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+          />
+          <p>🌻 Enjoy the weather!</p>
+        </article>
+        <article class="polaroid shadow">
+          <div>Go to the Fair</div>
+          <img
+            src="https://images.pexels.com/photos/225238/pexels-photo-225238.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+          />
+          <p>🎡 Play games!</p>
+        </article>
+      </div>
+    </section>
+    <section id="to-see" class="paper shadow">
+      <h1>Things to See</h1>
+      <p>Be inspired!</p>
+      <div class="columns">
+        <article class="polaroid shadow">
+          <div>City Zoo</div>
+          <img
+            src="https://images.pexels.com/photos/1599452/pexels-photo-1599452.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          />
+          <p>🦏 Go see the animals!</p>
+        </article>
+        <article class="polaroid shadow">
+          <div>Art Museum</div>
+          <img
+            src="https://images.pexels.com/photos/2123337/pexels-photo-2123337.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          />
+          <p>🖼️ Go see art!</p>
+        </article>
+        <article class="polaroid shadow">
+          <div>Local Sports</div>
+          <img
+            src="https://images.pexels.com/photos/264279/pexels-photo-264279.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          />
+          <p>⚾ ️️Go see a baseball game!</p>
+        </article>
+      </div>
+    </section>
+    <section id="to-eat" class="paper shadow">
+      <h1>Things to Eat</h1>
+      <p>Out on the town eats!</p>
+      <div class="columns">
+        <article class="polaroid shadow">
+          <div>Coffee Shops</div>
+          <img
+            src="https://images.pexels.com/photos/2079438/pexels-photo-2079438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          />
+          <p>☕️ Support local cafes!</p>
+        </article>
+        <article class="polaroid shadow">
+          <div>Food Trucks</div>
+          <img
+            src="https://images.pexels.com/photos/221357/pexels-photo-221357.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+          />
+          <p>🌯 Eat from a food truck!</p>
+        </article>
+      </div>
+    </section>
+    <section class="paper shadow" id="contact">
+      <h1>Anything that we missed? Let us know!</h1>
+      <form>
+        <label for="user-name">Your Name</label>
+        <br />
+        <input class="shadow" type="text" name="user-name" id="user-name" />
+        <br />
+        <label for="Activity">Your Activity</label> <br />
+        <input
+          class="shadow"
+          type="text"
+          name="user-activity"
+          id="user-activity"
+        />
+        <br />
+        <input class="shadow" type="submit" value="Send!" />
+      </form>
+    </section>
+  </body>
+</html>

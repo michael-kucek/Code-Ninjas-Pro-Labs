@@ -1,0 +1,62 @@
+.gallery-photo {
+  position: absolute;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  z-index: 100;
+}
+img {
+  opacity: 1;
+  transition: all 1s ease-in-out;
+}
+.hidden {
+  opacity: 0;
+}
+#gallery {
+  padding: 0px;
+  margin: 0px;
+}
+.toggle-bg {
+  width: 34px;
+  height: 20px;
+  padding: 1px;
+  border-radius: 10px;
+  background-color: darkgray;
+  transition: background-color 0.5s ease-in-out;
+}
+.toggle-bg.toggled {
+  background-color: #a7c839;
+}
+.toggler {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: white;
+  transition: transform 0.5s ease-in-out;
+}
+.toggler.toggled {
+  transform: translateX(14px);
+}
+.toggle-buttons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.toggle-container {
+  margin: 1em;
+}
+input {
+  border: none;
+  padding: 1em;
+  width: 4em;
+  border-radius: 10px;
+  height: 2em;
+}
+html {
+  background-color: #eee;
+  color: #338fbf;
+  overflow: auto;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,24 @@
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shadow {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+.paper {
+  border-left: 1px solid rgb(255, 206, 206);
+  background: -webkit-gradient(
+      linear,
+      0 0,
+      0 100%,
+      from(#7ad1ff),
+      color-stop(4%, rgb(255, 250, 243))
+    )
+    0 4px;
+  background-size: 100% 20px;
+}
+.thick-red-border {
+  box-shadow: rgb(0, 115, 182) 10px 10px 0 0;
+  color: rgb(234, 74, 76);
+  border: 8px solid rgb(234, 74, 76);
+}

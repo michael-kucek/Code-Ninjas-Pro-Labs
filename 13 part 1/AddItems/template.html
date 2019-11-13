@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="../db.js"></script>
+    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../globalStyles.css" />
+    <title>Add Items</title>
+  </head>
+  <body>
+    <nav>My Items | <a href="../ViewItems/template.html">View Items</a></nav>
+    <h1>Add Item</h1>
+    <form action="javascript:;" onsubmit="submitForm(this)">
+      <label for="name">Name</label>
+      <br />
+      <input type="text" id="name" name="name" placeholder="Item Name" />
+      <br />
+      <label for="creator">Creator</label>
+      <br />
+      <input
+        type="text"
+        id="creator"
+        name="creator"
+        placeholder="Item Creator"
+      />
+      <br />
+      <label for="genre">Genre</label>
+      <br />
+      <input type="text" id="genre" name="genre" placeholder="Item Genre" />
+      <br />
+      <label for="cover">Cover Url</label>
+      <br />
+      <input
+        type="text"
+        id="cover"
+        name="cover"
+        placeholder="Cover Image Url"
+      />
+      <br />
+      <label for="purchased">Purchase Date</label>
+      <br />
+      <input type="date" id="purchased" name="purchased" />
+      <br />
+      <label for="rating">Rating</label>
+      <br />
+      <label>
+        <input type="radio" name="rating" value="1" />
+        1
+      </label>
+      <label>
+        <input type="radio" name="rating" value="2" />
+        2
+      </label>
+      <label>
+        <input type="radio" name="rating" value="3" />
+        3
+      </label>
+      <label>
+        <input type="radio" name="rating" value="4" />
+        4
+      </label>
+      <label>
+        <input type="radio" name="rating" value="5" />
+        5
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
+    <section id="history"></section>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+body {
+  background-color: #e7e6e3;
+  color: rgb(43, 42, 41);
+}
+body,
+input,
+button {
+  font-family: "Oswald", sans-serif;
+}
+pre {
+  height: 450;
+  overflow: auto;
+  background-color: #2b2a28;
+  color: #e7e6e3;
+}
+#left {
+  width: 30%;
+  position: fixed;
+  top: 10;
+  left: 10;
+}
+#right {
+  width: 68%;
+  padding-left: 32%;
+}
+.valid {
+  background-position: 0 100%;
+  background-color: #6ab3f7;
+  box-shadow: 0px 1px 10px #6ab3f7;
+}
+.invalid {
+  box-shadow: 0px 1px 10px #d1363a;
+  background-position: 100% 0;
+  background-color: #d1363a;
+}
+:root {
+  --animation-time: 0.15s;
+}
+.shake {
+  animation: shake var(--animation-time) ease-in-out 2;
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0);
+  }
+  33% {
+    transform: rotate(1deg);
+  }
+  67% {
+    transform: rotate(-1deg);
+  }
+}
+label {
+  display: block;
+  font-size: 1.4em;
+}
+input {
+  border: none;
+  padding: 1em;
+  margin: 1em 0em;
+  width: 100%;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+section {
+  margin: 1em;
+  padding: 1em;
+  background-position: 100% 10%;
+  background-size: 100% 255%;
+  background-image: linear-gradient(-181deg, #d1363a 49.5%, #549bf7 50.5%);
+  transition-property: color, background-color, background-position, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+  width: 300;
+  min-height: 200px;
+}
+
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background-color: #4a5953;
+  padding: 1em;
+  color: #e7e6e3;
+  text-transform: uppercase;
+}
+#check {
+  background-color: #f2904c;
+}

@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+body {
+  font-family: "Ubuntu Mono", monospace;
+  background-color: #aaaaaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  height: 60%;
+}
+button,
+#history {
+}
+.key-pad > div {
+  display: flex;
+}
+.calc-keys {
+  display: flex;
+  background: #f0f0f0f0;
+  border: 2px solid #010326;
+  border-radius: 0 0 8px 8px;
+  padding: 1em;
+}
+button {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 1.4em;
+  width: 50px;
+  height: 50px;
+  border: none;
+  margin: 2px;
+  border-radius: 50%;
+}
+.number {
+  background-color: #f2dea2;
+}
+.number:hover {
+  background-color: #eec959;
+}
+.operation {
+  background-color: #8065a6;
+  color: white;
+}
+.operation:hover {
+  background-color: #5d3b8b;
+}
+button#execute {
+  background-color: #f28e85;
+}
+button:disabled {
+  opacity: 50%;
+}
+.full {
+  width: 100%;
+}
+.reset {
+  background-color: #f28e85;
+}
+.reset:hover,
+button#execute:hover {
+  background-color: #f1584b;
+}
+#dock {
+  background-color: #010326;
+
+  font-family: "Press Start 2P", cursive;
+
+  color: #f2f2f2;
+  font-size: 3em;
+  height: 2em;
+  line-height: 2em;
+  padding: 0 0.5em;
+  border: 2px solid #010326;
+  border-radius: 8px 8px 0 0;
+}
+#history {
+  background-color: #f2c894;
+
+  font-family: "Press Start 2P", cursive;
+  width: 250;
+  overflow-y: hidden;
+  height: 210;
+  border-radius: 8px;
+  font-size: 0.7em;
+  padding: 0em 0.4em;
+  margin-left: 1em;
+}
+p {
+  margin: 0.2em;
+}
+p:first-of-type {
+  border-bottom: 2px solid #010326;
+}

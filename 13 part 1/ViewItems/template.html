@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>View Items</title>
+    <script src="../db.js"></script>
+    <script src="./scripts.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="../globalStyles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <nav>My Items | <a href="../AddItems/template.html">Add Items</a></nav>
+      <h1>View Items</h1>
+      <div>
+        <p>Sort By</p>
+        <button class="sorter" id="rating" onclick="sortBy('rating')">
+          Rating
+        </button>
+        <button class="sorter" id="creator" onclick="sortBy('creator')">
+          Creator
+        </button>
+        <button class="sorter" id="name" onclick="sortBy('name')">Title</button>
+        <button class="sorter" id="purchased" onclick="sortBy('purchased')">
+          Purchased
+        </button>
+      </div>
+    </div>
+    <section id="shelf"></section>
+  </body>
+</html>

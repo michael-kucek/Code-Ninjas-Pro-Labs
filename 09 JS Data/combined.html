@@ -1,0 +1,581 @@
+<html lang="en">
+  <head>
+    <title>Hunt</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #e7e6e3;
+        color: rgb(43, 42, 41);
+      }
+      body,
+      input,
+      button {
+        font-family: "Oswald", sans-serif;
+      }
+      pre {
+        height: 450px;
+        overflow: auto;
+        background-color: #2b2a28;
+        color: #e7e6e3;
+      }
+      #left {
+        width: 30%;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+      }
+      #right {
+        width: 68%;
+        padding-left: 32%;
+      }
+      .valid {
+        background-position: 0 100%;
+        background-color: #6ab3f7;
+        box-shadow: 0px 1px 10px #6ab3f7;
+      }
+      .invalid {
+        box-shadow: 0px 1px 10px #d1363a;
+        background-position: 100% 0;
+        background-color: #d1363a;
+      }
+      :root {
+        --animation-time: 0.15s;
+      }
+      .shake {
+        animation: shake var(--animation-time) ease-in-out 2;
+      }
+      @keyframes shake {
+        0% {
+          transform: rotate(0);
+        }
+        33% {
+          transform: rotate(1deg);
+        }
+        67% {
+          transform: rotate(-1deg);
+        }
+      }
+      label {
+        display: block;
+        font-size: 1.4em;
+      }
+      input {
+        border: none;
+        padding: 1em;
+        width: 100%;
+      }
+      .flex {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      section {
+        margin: 1em;
+        padding: 1em;
+        background-position: 100% 10%;
+        background-size: 100% 255%;
+        background-image: linear-gradient(
+          -181deg,
+          #d1363a 49.5%,
+          #549bf7 50.5%
+        );
+        transition-property: color, background-color, background-position,
+          transform;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+        width: 350px;
+        min-height: 200px;
+      }
+      button {
+        width: 100%;
+        border-radius: 8px;
+        border: none;
+        background-color: #4a5953;
+        padding: 1em;
+        color: #e7e6e3;
+        text-transform: uppercase;
+      }
+      #check {
+        background-image: linear-gradient(90deg, #4a5953 50%, #f2904c 50%);
+        background-size: 200% 100%;
+        background-position-x: 100%;
+        transition: background-position-x 1s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div id="left">
+        <input type="text" name="title" id="title" />
+        <button id="search" onclick="search('#title', '#results')">
+          Search
+        </button>
+        <pre id="results"></pre>
+        <button id="check" onclick="check()">Check</button>
+      </div>
+      <!-- 1 -->
+      <div class="flex" id="right">
+        <section id="days-container">
+          <label for="days">Two Days a Week</label>
+          <input type="text" name="days" id="days" />
+          <div id="days-results"></div>
+        </section>
+        <!-- 2 -->
+        <section id="genre-container">
+          <label for="genre">1st Genre is "Drama"</label>
+          <input type="text" name="genre" id="genre" />
+          <div id="genre-results"></div>
+        </section>
+        <!-- 3 -->
+        <section id="thirty-container">
+          <label for="thirty">30 minute runtime</label>
+          <input type="text" name="thirty" id="thirty" />
+          <div id="thirty-results"></div>
+        </section>
+        <!-- 4 -->
+        <section id="sixty-container">
+          <label for="sixty">>60 minute runtime</label>
+          <input type="text" name="sixty" id="sixty" />
+          <div id="sixty-results"></div>
+        </section>
+        <!-- 5 -->
+        <section id="ended-container">
+          <label for="ended">Ended</label>
+          <input type="text" name="ended" id="ended" />
+          <div id="ended-results"></div>
+        </section>
+        <!-- 6 -->
+        <section id="lastyear-container">
+          <label for="lastyear">Premiered Last Year</label>
+          <input type="text" name="lastyear" id="lastyear" />
+          <div id="lastyear-results"></div>
+        </section>
+        <!-- 7 -->
+        <section id="episodes-container">
+          <label for="episodes">100+ Episodes</label>
+          <input type="text" name="episodes" id="episodes" />
+          <div id="episodes-results"></div>
+        </section>
+        <!-- 8 -->
+        <section id="netflix-container">
+          <label for="netflix">On Netflix</label>
+          <input type="text" name="netflix" id="netflix" />
+          <div id="netflix-results"></div>
+        </section>
+        <!-- 9 -->
+        <section id="scripted-container">
+          <label for="scripted">Scripted</label>
+          <input type="text" name="scripted" id="scripted" />
+          <div id="scripted-results"></div>
+        </section>
+        <!-- 10 -->
+        <section id="reality-container">
+          <label for="reality">Reality</label>
+          <input type="text" name="reality" id="reality" />
+          <div id="reality-results"></div>
+        </section>
+        <!-- 11 -->
+        <section id="nineties-container">
+          <label for="nineties">Premerired in the 90s</label>
+          <input type="text" name="nineties" id="nineties" />
+          <div id="nineties-results"></div>
+        </section>
+        <!-- 12 -->
+        <section id="comedy-container">
+          <label for="comedy">Has the Comedy Genre</label>
+          <input type="text" name="comedy" id="comedy" />
+          <div id="comedy-results"></div>
+        </section>
+        <!-- 13 -->
+        <section id="us-container">
+          <label for="us">On a US TV Channel</label>
+          <input type="text" name="us" id="us" />
+          <div id="us-results"></div>
+        </section>
+        <!-- 14 -->
+        <section id="international-container">
+          <label for="international">Not From US</label>
+          <input type="text" name="international" id="international" />
+          <div id="international-results"></div>
+        </section>
+        <!-- 15 -->
+        <section id="language-container">
+          <label for="language">Not English Language</label>
+          <input type="text" name="language" id="language" />
+          <div id="language-results"></div>
+        </section>
+        <!-- 16 -->
+        <section id="ten-container">
+          <label for="ten">Currently Running for 10 Years</label>
+          <input type="text" name="ten" id="ten" />
+          <div id="ten-results"></div>
+        </section>
+      </div>
+    </div>
+    <script>
+      const formatted = json => JSON.stringify(json, null, 2);
+      const query = async title => {
+        const apiUrl = `http://api.tvmaze.com/singlesearch/shows?q=${title}&embed=episodes`;
+        const res = await fetch(apiUrl);
+        const json = await res.json();
+        const {
+          id,
+          name,
+          type,
+          language,
+          genres,
+          status,
+          runtime,
+          premiered,
+          schedule,
+          network,
+          webChannel,
+          _embedded
+        } = json;
+        const results = {
+          id,
+          name,
+          type,
+          language,
+          genres,
+          status,
+          runtime,
+          premiered,
+          schedule,
+          network,
+          webChannel,
+          episodes: _embedded.episodes.length || null
+        };
+        return results;
+      };
+      function generateTime() {
+        return Math.max(0.18, Math.floor(Math.random() * 25) / 100);
+      }
+      const animate = el => {
+        el.style.setProperty("--animation-time", generateTime() + "s");
+      };
+      const search = async (inputId, resultsId) => {
+        const title = document.querySelector(inputId).value;
+        const el = document.querySelector(resultsId);
+        el.innerHTML = "Searching...";
+        el.innerHTML = formatted(await query(title));
+        check();
+      };
+      setInterval(() => {
+        const checker = [
+          getElements("#days")[2],
+          getElements("#genre")[2],
+          getElements("#thirty")[2],
+          getElements("#sixty")[2],
+          getElements("#ended")[2],
+          getElements("#lastyear")[2],
+          getElements("#episodes")[2],
+          getElements("#netflix")[2],
+          getElements("#scripted")[2],
+          getElements("#reality")[2],
+          getElements("#nineties")[2],
+          getElements("#comedy")[2],
+          getElements("#us")[2],
+          getElements("#international")[2],
+          getElements("#language")[2],
+          getElements("#ten")[2]
+        ];
+        const count = checker.reduce((p, c) => {
+          const val = c.classList.contains("valid") ? 1 : 0;
+          return val + p;
+        }, 0);
+        document.querySelector("#check").style.backgroundPositionX = `${100 -
+          count / 0.16}%`;
+      }, 1000);
+
+      const check = async () => {
+        checkDays();
+        checkGenre();
+        checkThirty();
+        checkSixty();
+        checkEnded();
+        checkLastYear();
+        checkEpisodes();
+        checkNetflix();
+        checkScripted();
+        checkReality();
+        check90s();
+        checkComedy();
+        checkUS();
+        checkNotUS();
+        checkLanguage();
+        checkTen();
+      };
+      const getElements = id => {
+        const resultsId = `${id}-results`;
+        const sectionId = `${id}-container`;
+        return [
+          document.querySelector(id).value,
+          document.querySelector(resultsId),
+          document.querySelector(sectionId)
+        ];
+      };
+      const checkDays = async () => {
+        const [title, resEl, contEl] = getElements("#days");
+        if (!title) return;
+        const res = await query(title);
+        const days = res.schedule.days.length;
+        animate(contEl);
+        const correct = days == 2;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        const str = `${res.name} airs ${days} days a week.`;
+        resEl.innerHTML = str;
+      };
+      const checkGenre = async () => {
+        const [title, resEl, contEl] = getElements("#genre");
+        if (!title) return;
+        const res = await query(title);
+        const genre = res.genres[0];
+        const str = `${res.name}'s first genre is ${genre}.`;
+        animate(contEl);
+        const correct = genre == "Drama";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        resEl.innerHTML = str;
+      };
+      const checkThirty = async () => {
+        const [title, resEl, contEl] = getElements("#thirty");
+        if (!title) return;
+        const res = await query(title);
+        const runtime = res.runtime;
+        const str = `${res.name}'s runtime is ${runtime} minutes.`;
+        animate(contEl);
+        const correct = runtime == 30;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkSixty = async () => {
+        const [title, resEl, contEl] = getElements("#sixty");
+        if (!title) return;
+        const res = await query(title);
+        const runtime = res.runtime;
+        const str = `${res.name}'s runtime is ${runtime} minutes.`;
+        animate(contEl);
+        const correct = runtime > 60;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkEnded = async () => {
+        const [title, resEl, contEl] = getElements("#ended");
+        if (!title) return;
+        const res = await query(title);
+        const status = res.status;
+        const str = `${res.name} is ${status}.`;
+        animate(contEl);
+        const correct = status == "Ended";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkLastYear = async () => {
+        const [title, resEl, contEl] = getElements("#lastyear");
+        if (!title) return;
+        const res = await query(title);
+        const premiered = new Date(res.premiered);
+        const thisyear = new Date();
+        const diff = thisyear.getFullYear() - premiered.getFullYear();
+        let str = `${res.name} premiered `;
+        if (diff == 0) str += "this year.";
+        if (diff == 1) str += "last year.";
+        if (diff > 1) str += `${diff} years ago.`;
+        animate(contEl);
+        const correct = diff == 1;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkEpisodes = async () => {
+        const [title, resEl, contEl] = getElements("#episodes");
+        if (!title) return;
+        const res = await query(title);
+        const episodes = res.episodes;
+        const str = `There are ${episodes} episodes of ${res.name}.`;
+        animate(contEl);
+        const correct = episodes >= 100;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkNetflix = async () => {
+        const [title, resEl, contEl] = getElements("#netflix");
+        if (!title) return;
+        const res = await query(title);
+        const correct = res.webChannel && res.webChannel.name == "Netflix";
+        const str = `${res.name} is ${correct ? "on" : "not on"} Netflix.`;
+        animate(contEl);
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkScripted = async () => {
+        const [title, resEl, contEl] = getElements("#scripted");
+        if (!title) return;
+        const res = await query(title);
+        let type = res.type;
+        if (type == "Game Show") type = "a Game Show";
+        const str = `${res.name} is ${type}.`;
+        animate(contEl);
+        const correct = type == "Scripted";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkReality = async () => {
+        const [title, resEl, contEl] = getElements("#reality");
+        if (!title) return;
+        const res = await query(title);
+        let type = res.type;
+        if (type == "Game Show") type = "a Game Show";
+        const str = `${res.name} is ${type}.`;
+        animate(contEl);
+        const correct = type == "Reality";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const check90s = async () => {
+        const [title, resEl, contEl] = getElements("#nineties");
+        if (!title) return;
+        const res = await query(title);
+        const premiered = new Date(res.premiered);
+        const year = premiered.getFullYear();
+        const str = `${res.name} premiered in ${year}.`;
+        animate(contEl);
+        const correct = year < 2000 && year >= 1990;
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+      const checkComedy = async () => {
+        const [title, resEl, contEl] = getElements("#comedy");
+        if (!title) return;
+        const res = await query(title);
+        const genres = res.genres;
+        const str = `${res.name} has the ${genres.join(", ")} genres.`;
+        animate(contEl);
+        const correct = genres.includes("Comedy");
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        resEl.innerHTML = str;
+      };
+      const checkUS = async () => {
+        const [title, resEl, contEl] = getElements("#us");
+        if (!title) return;
+        const res = await query(title);
+        const network = res.network;
+        let str = res.name;
+        if (!network) {
+          str += " is not on television.";
+        }
+        if (network) {
+          if (network.name) {
+            str += " is on " + network.name;
+          }
+          if (network.country.name) {
+            str += " in " + network.country.name + ".";
+          }
+        }
+        animate(contEl);
+        const correct = network && network.country.code == "US";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        resEl.innerHTML = str;
+      };
+      const checkNotUS = async () => {
+        const [title, resEl, contEl] = getElements("#international");
+        if (!title) return;
+        const res = await query(title);
+        const network = res.network;
+        let str = res.name;
+        if (!network) {
+          str += " is not on television.";
+        }
+        if (network) {
+          if (network.name) {
+            str += " is on " + network.name;
+          }
+          if (network.country.name) {
+            str += " in " + network.country.name + ".";
+          }
+        }
+        animate(contEl);
+        const correct = network && network.country.code != "US";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        resEl.innerHTML = str;
+      };
+      const checkLanguage = async () => {
+        const [title, resEl, contEl] = getElements("#language");
+        if (!title) return;
+        const res = await query(title);
+        const language = res.language;
+        const str = `${res.name} is in ${language}.`;
+        animate(contEl);
+        const correct = language != "English";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 500);
+        resEl.innerHTML = str;
+      };
+      const checkTen = async () => {
+        const [title, resEl, contEl] = getElements("#ten");
+        if (!title) return;
+        const res = await query(title);
+        const status = res.status;
+        const premiered = new Date(res.premiered);
+        const year = premiered.getFullYear();
+        const thisyear = new Date();
+        const diff = thisyear.getFullYear() - premiered.getFullYear();
+        const str = `${res.name} is ${status} and premiered in ${year}.`;
+        animate(contEl);
+        const correct = diff >= 10 && status == "Running";
+        contEl.className = correct ? "valid" : "invalid shake";
+        setTimeout(() => {
+          contEl.classList.remove("shake");
+        }, 1000);
+        resEl.innerHTML = str;
+      };
+    </script>
+  </body>
+</html>

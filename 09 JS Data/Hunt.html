@@ -1,0 +1,123 @@
+<html lang="en">
+  <head>
+    <title>Hunt</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="scripts.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="flex">
+      <div id="left">
+        <input type="text" name="title" id="title" />
+        <button id="search" onclick="search('#title', '#results')">
+          Search
+        </button>
+        <pre id="results"></pre>
+        <button id="check" onclick="check()">Check</button>
+      </div>
+      <!-- 1 -->
+      <div class="flex" id="right">
+        <section id="days-container">
+          <label for="days">Two Days a Week</label>
+          <input type="text" name="days" id="days" />
+          <div id="days-results"></div>
+        </section>
+        <!-- 2 -->
+        <section id="genre-container">
+          <label for="genre">1st Genre is "Drama"</label>
+          <input type="text" name="genre" id="genre" />
+          <div id="genre-results"></div>
+        </section>
+        <!-- 3 -->
+        <section id="thirty-container">
+          <label for="thirty">30 minute runtime</label>
+          <input type="text" name="thirty" id="thirty" />
+          <div id="thirty-results"></div>
+        </section>
+        <!-- 4 -->
+        <section id="sixty-container">
+          <label for="sixty">>60 minute runtime</label>
+          <input type="text" name="sixty" id="sixty" />
+          <div id="sixty-results"></div>
+        </section>
+        <!-- 5 -->
+        <section id="ended-container">
+          <label for="ended">Ended</label>
+          <input type="text" name="ended" id="ended" />
+          <div id="ended-results"></div>
+        </section>
+        <!-- 6 -->
+        <section id="lastyear-container">
+          <label for="lastyear">Premiered Last Year</label>
+          <input type="text" name="lastyear" id="lastyear" />
+          <div id="lastyear-results"></div>
+        </section>
+        <!-- 7 -->
+        <section id="episodes-container">
+          <label for="episodes">100+ Episodes</label>
+          <input type="text" name="episodes" id="episodes" />
+          <div id="episodes-results"></div>
+        </section>
+        <!-- 8 -->
+        <section id="netflix-container">
+          <label for="netflix">On Netflix</label>
+          <input type="text" name="netflix" id="netflix" />
+          <div id="netflix-results"></div>
+        </section>
+        <!-- 9 -->
+        <section id="scripted-container">
+          <label for="scripted">Scripted</label>
+          <input type="text" name="scripted" id="scripted" />
+          <div id="scripted-results"></div>
+        </section>
+        <!-- 10 -->
+        <section id="reality-container">
+          <label for="reality">Reality</label>
+          <input type="text" name="reality" id="reality" />
+          <div id="reality-results"></div>
+        </section>
+        <!-- 11 -->
+        <section id="nineties-container">
+          <label for="nineties">Premerired in the 90s</label>
+          <input type="text" name="nineties" id="nineties" />
+          <div id="nineties-results"></div>
+        </section>
+        <!-- 12 -->
+        <section id="comedy-container">
+          <label for="comedy">Has the Comedy Genre</label>
+          <input type="text" name="comedy" id="comedy" />
+          <div id="comedy-results"></div>
+        </section>
+        <!-- 13 -->
+        <section id="us-container">
+          <label for="us">On a US TV Channel</label>
+          <input type="text" name="us" id="us" />
+          <div id="us-results"></div>
+        </section>
+        <!-- 14 -->
+        <section id="international-container">
+          <label for="international">Not From US</label>
+          <input type="text" name="international" id="international" />
+          <div id="international-results"></div>
+        </section>
+        <!-- 15 -->
+        <section id="language-container">
+          <label for="language">Not English Language</label>
+          <input type="text" name="language" id="language" />
+          <div id="language-results"></div>
+        </section>
+        <!-- 16 -->
+        <section id="ten-container">
+          <label for="ten">Currently Running for 10 Years</label>
+          <input type="text" name="ten" id="ten" />
+          <div id="ten-results"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

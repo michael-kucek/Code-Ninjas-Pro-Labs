@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Music Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="Spotify.js"></script>
+    <script src="dom.js"></script>
+    <script src="scripts.js"></script>
+    <script src="router.js"></script>
+  </head>
+
+  <body>
+    <div id="search-box">
+      <button onclick="goToSearch()">Go To Search</button>
+      <button onclick="spotify.getMe()">
+        Spotify Log In
+      </button>
+    </div>
+    <section>
+      <div id="album-header">
+        <div>
+          <img id="cover-art" src="" />
+        </div>
+        <div id="album-info">
+          <h1 id="artist-name"></h1>
+          <p id="artist-followers"></p>
+          <p id="artist-genres"></p>
+        </div>
+      </div>
+      <div id="list-container">
+        <h1>Top Tracks</h1>
+        <ol id="track-list"></ol>
+        <h1>Albums</h1>
+        <div id="album-results"></div>
+      </div>
+      <h1 id="related-artist-header">Related Artists</h1>
+      <div id="artist-results"></div>
+    </section>
+    <div id="music-player">
+      <audio controls></audio>
+      <div>Now Playing:</div>
+      <div id="now-playing"></div>
+    </div>
+  </body>
+</html>

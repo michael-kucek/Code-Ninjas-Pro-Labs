@@ -1,0 +1,90 @@
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="brain.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div>
+      <div id="dock"></div>
+      <div class="calc-keys">
+        <div class="key-pad">
+          <div>
+            <button class="number" onclick="input(7)">7</button>
+            <button class="number" onclick="input(8)">8</button>
+            <button class="number" onclick="input(9)">9</button>
+          </div>
+          <div>
+            <button class="number" onclick="input(4)">4</button>
+            <button class="number" onclick="input(5)">5</button>
+            <button class="number" onclick="input(6)">6</button>
+          </div>
+          <div>
+            <button class="number" onclick="input(1)">1</button>
+            <button class="number" onclick="input(2)">2</button>
+            <button class="number" onclick="input(3)">3</button>
+          </div>
+          <div>
+            <button class="number" onclick="input(0)">0</button>
+            <button class="number" onclick="input('.')">.</button>
+            <button id="execute" disabled onclick="executeBinary()">=</button>
+          </div>
+        </div>
+        <div class="key-pad operations">
+          <div>
+            <button class="operation" onclick="operate('+')">+</button>
+            <button class="operation" onclick="operate('-')">-</button>
+          </div>
+          <div>
+            <button class="operation" onclick="operate('x')">x</button>
+            <button class="operation" onclick="operate('÷')">÷</button>
+          </div>
+          <div>
+            <button class="operation full" onclick="executeUnary(toMi)">
+              toMi
+            </button>
+          </div>
+          <div>
+            <button class="operation full" onclick="executeUnary(toKm)">
+              toKm
+            </button>
+          </div>
+        </div>
+        <div>
+          <div>
+            <button class="reset full" onclick="reset()">
+              Reset
+            </button>
+          </div>
+          <!------------------------------------------------------------->
+          <!---------------- Do not edit above this line ---------------->
+          <!------------ Add additional unary operators here ------------>
+          <!------------------------------------------------------------->
+          <div>
+            <button class="operation full" onclick="executeUnary()">
+              ???
+            </button>
+          </div>
+          <div>
+            <button class="operation full" onclick="executeUnary()">
+              ???
+            </button>
+          </div>
+          <div>
+            <button class="operation full" onclick="executeUnary()">
+              ???
+            </button>
+          </div>
+          <!------------------------------------------------------------->
+          <!------------ Add additional unary operators here ------------>
+          <!---------------- Do not edit below this line ---------------->
+          <!------------------------------------------------------------->
+        </div>
+        <div id="history"></div>
+      </div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

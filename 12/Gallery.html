@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="scripts.js"></script>
+    <title>Gallery</title>
+  </head>
+  <body>
+    <div class="toggle-buttons-container">
+      <input
+        id="cols"
+        placeholder="Cols"
+        value="4"
+        type="number"
+        onchange="arrange()"
+      />
+      <div class="toggle-container">
+        Plains
+        <div class="toggle-bg toggled" onclick="toggler(this, '.plain')">
+          <div class="toggler toggled"></div>
+        </div>
+      </div>
+      <div class="toggle-container">
+        Rivers
+        <div class="toggle-bg toggled" onclick="toggler(this, '.river')">
+          <div class="toggler toggled"></div>
+        </div>
+      </div>
+      <div class="toggle-container">
+        Forests
+        <div class="toggle-bg toggled" onclick="toggler(this, '.forest')">
+          <div class="toggler toggled"></div>
+        </div>
+      </div>
+      <div class="toggle-container">
+        Swamps
+        <div class="toggle-bg toggled" onclick="toggler(this, '.swamp')">
+          <div class="toggler toggled"></div>
+        </div>
+      </div>
+      <div class="toggle-container">
+        Mountains
+        <div class="toggle-bg toggled" onclick="toggler(this, '.mountain')">
+          <div class="toggler toggled"></div>
+        </div>
+      </div>
+    </div>
+    <div id="gallery">
+      <img class="gallery-photo forest" src="./photos/f01.jpg" alt="" />
+      <img class="gallery-photo plain" src="./photos/p01.jpg" alt="" />
+      <img class="gallery-photo forest" src="./photos/f03.jpg" alt="" />
+      <img class="gallery-photo mountain" src="./photos/m02.jpg" alt="" />
+      <img class="gallery-photo river" src="./photos/r01.jpg" alt="" />
+      <img class="gallery-photo swamp" src="./photos/s01.jpg" alt="" />
+      <img class="gallery-photo mountain" src="./photos/m01.jpg" alt="" />
+      <img class="gallery-photo forest" src="./photos/f02.jpg" alt="" />
+      <img class="gallery-photo river" src="./photos/r02.jpg" alt="" />
+      <img class="gallery-photo mountain" src="./photos/m03.jpg" alt="" />
+    </div>
+  </body>
+</html>
